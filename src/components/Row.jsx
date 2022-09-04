@@ -13,7 +13,7 @@ const Row = ({ title, fetchUrl }) => {
   }, [fetchUrl]);
 
   return (
-    <>
+    <section>
       <h2 className='text-white font-bold md:text-xl p-4'>{title}</h2>
       <div className='relative flex items-center'>
         <div id={'slider'}>
@@ -33,9 +33,9 @@ const Row = ({ title, fetchUrl }) => {
 
                 <p>
                   {like ? (
-                    <FaHeart className='absolute top-10 left-4 text-gray-300' />
+                    <FaHeart className='absolute top-5 left-4 text-gray-300' />
                   ) : (
-                    <FaRegHeart className='absolute top-10 left-4 text-gray-300' />
+                    <FaRegHeart className='absolute top-5 left-4 text-gray-300' />
                   )}
                 </p>
               </div>
@@ -43,7 +43,7 @@ const Row = ({ title, fetchUrl }) => {
           ))}
         </div>
       </div>
-    </>
+    </section>
   );
 };
 
