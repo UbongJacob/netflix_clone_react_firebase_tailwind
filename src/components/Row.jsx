@@ -1,47 +1,47 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { MdChevronLeft, MdChevronRight } from 'react-icons/md';
 
-import requests from '../Request';
+import Movie from './Movie';
 
-const Row = ({ title, fetchUrl }) => {
+const Row = ({ title, fetchUrl, rowId }) => {
   const [movies, setMovies] = useState([]);
-  const [like, setLike] = useState(false);
 
   useEffect(() => {
     axios.get(fetchUrl).then((response) => setMovies(response.data.results));
   }, [fetchUrl]);
 
+  const slideLeft = () => {
+    let slider = document.getElementById('slider' + rowId);
+    slider.scrollLeft -= 500;
+  };
+  const slideRight = () => {
+    let slider = document.getElementById('slider' + rowId);
+    slider.scrollLeft += 500;
+  };
+
   return (
     <section>
       <h2 className='text-white font-bold md:text-xl p-4'>{title}</h2>
-      <div className='relative flex items-center'>
-        <div id={'slider'}>
+      <div className='relative flex items-center group'>
+        <MdChevronLeft
+          onClick={slideLeft}
+          size={40}
+          className='bg-white left-2 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
+        />
+        <div
+          id={'slider' + rowId}
+          className='w-full h-full overflow-y-hidden overflow-x-scroll whitespace-nowrap scrollbar-hide scroll-smooth relative'
+        >
           {movies.map((movie, id) => (
-            <div className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'>
-              <h1>hell</h1>
-              <img
-                className='w-full h-auto block'
-                src={`${requests.imgBaseUrl}/w500/${movie?.backdrop_path}`}
-                alt={movie.title}
-              />
-
-              <div className='absolute top-0 left-0 w-full h-full hover:bg-black/80 opacity-0 hover:opacity-100 text-white'>
-                <p className='white-space-normal text-xs md:text-sm font-bold flex justify-center items-center h-full text-center'>
-                  {movie?.title}
-                </p>
-
-                <p>
-                  {like ? (
-                    <FaHeart className='absolute top-5 left-4 text-gray-300' />
-                  ) : (
-                    <FaRegHeart className='absolute top-5 left-4 text-gray-300' />
-                  )}
-                </p>
-              </div>
-            </div>
+            <Movie key={id} item={movie} />
           ))}
         </div>
+        <MdChevronRight
+          onClick={slideRight}
+          size={40}
+          className='bg-white  right-0 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
+        />
       </div>
     </section>
   );

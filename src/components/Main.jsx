@@ -20,11 +20,13 @@ const Main = () => {
     <div className='w-full h-[550px] text-white'>
       <div className='w-full h-full'>
         <div className='absolute w-full h-[550px] bg-gradient-to-t from-black'></div>
-        <img
-          className='w-full h-full object-cover'
-          src={`${requests.imgBaseUrl}/original/${movie?.backdrop_path}`}
-          alt={movie?.title}
-        />
+        {movie && (
+          <img
+            className='w-full h-full object-cover'
+            src={`${requests.imgBaseUrl}/original/${movie.backdrop_path}`}
+            alt={movie?.title}
+          />
+        )}
         <div className='absolute w-full top-[20%] p-4 md:p-8'>
           <h1 className='text-3xl md:text-5xl font-bold'>{movie?.title}</h1>
           <div className='my-4'>

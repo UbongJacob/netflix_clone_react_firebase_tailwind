@@ -3,14 +3,42 @@ import Row from '../components/Row';
 import requests from '../Request';
 
 const Home = () => {
+  const rowDetails = [
+    {
+      title: 'Upcoming',
+      url: 'upcoming',
+    },
+    {
+      title: 'Popular',
+      url: 'popular',
+    },
+    {
+      title: 'Trending',
+      url: 'trending',
+    },
+    {
+      title: 'Top Rated',
+      url: 'topRated',
+    },
+    {
+      title: 'Horror',
+      url: 'horror',
+    },
+  ];
+
   return (
     <>
       <Main />
-      <Row title='Upcoming' fetchUrl={requests.upcoming} />
-      <Row title='Popular' fetchUrl={requests.popular} />
-      <Row title='Trending' fetchUrl={requests.trending} />
-      <Row title='Top Rated' fetchUrl={requests.topRated} />
-      <Row title='Horror' fetchUrl={requests.horror} />
+      {rowDetails.map((detail, index) => {
+        return (
+          <Row
+            key={++index}
+            rowId={++index}
+            title={detail.title}
+            fetchUrl={requests[detail.url]}
+          />
+        );
+      })}
     </>
   );
 };
