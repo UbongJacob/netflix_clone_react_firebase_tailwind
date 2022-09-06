@@ -1,15 +1,37 @@
 import { useState } from 'react';
 import { FaHeart, FaRegHeart } from 'react-icons/fa';
+import { arrayUnion, doc, updateDoc } from 'firebase/firestore';
 
+import { db, documentName } from '../firebase';
+import { UserAuth } from '../context/AuthContext';
 import requests from '../Request';
 
 const Movie = ({ item }) => {
-  // eslint-disable-next-line
   const [like, setLike] = useState(false);
+  // eslint-disable-next-line
+  const [saved, setSaved] = useState(false);
+  const { user } = UserAuth();
+
+  const movieID = doc(db, documentName, `${user?.email}`);
+
+  const saveShow = async () => {
+    if (user?.email) {
+      setLike(!like);
+      setSaved(true);
+      await updateDoc(movieID, {
+        savedShows: arrayUnion({
+          id: item.id,
+          title: item.title,
+          img: item.backdrop_path,
+        }),
+      });
+    } else {
+      alert('Please log in to save a movie');
+    }
+  };
 
   return (
     <div className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'>
-      <h1>hell</h1>
       <img
         className='w-full h-auto block'
         src={`${requests.imgBaseUrl}/w500/${item?.backdrop_path}`}
@@ -21,11 +43,11 @@ const Movie = ({ item }) => {
           {item?.title}
         </p>
 
-        <p>
+        <p onClick={saveShow}>
           {like ? (
-            <FaHeart className='absolute top-9  left-4 text-gray-300' />
+            <FaHeart className='absolute top-4  left-4 text-gray-300' />
           ) : (
-            <FaRegHeart className='absolute top-9  left-4 text-gray-300' />
+            <FaRegHeart className='absolute top-4  left-4 text-gray-300' />
           )}
         </p>
       </div>
