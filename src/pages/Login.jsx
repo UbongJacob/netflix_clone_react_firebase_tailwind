@@ -2,16 +2,6 @@ import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { UserAuth } from '../context/AuthContext';
 
-const formatError = (errorGiven) => {
-  if (errorGiven.includes('wrong-password'))
-    return 'Hey, You Entered a Wrong Password';
-
-  if (errorGiven.includes('user-not-found'))
-    return 'Hey, This Email Does Not Exist';
-
-  return errorGiven;
-};
-
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -30,6 +20,16 @@ const Login = () => {
       console.log(error);
       setError(error?.message);
     }
+  };
+
+  const formatError = (errorGiven) => {
+    if (errorGiven.includes('wrong-password'))
+      return 'Hey, You Entered a Wrong Password';
+
+    if (errorGiven.includes('user-not-found'))
+      return 'Hey, This Email Does Not Exist';
+
+    return errorGiven;
   };
 
   return (

@@ -7,28 +7,6 @@ import { db, documentName } from '../firebase';
 import { UserAuth } from '../context/AuthContext';
 import requests from '../Request';
 
-const slideLeft = () => {
-  let slider = document.getElementById('slider');
-  slider.scrollLeft -= 500;
-};
-const slideRight = () => {
-  let slider = document.getElementById('slider');
-  slider.scrollLeft += 500;
-};
-
-const movieRef = doc(db, documentName, `${user?.email}`);
-
-const deleteShow = async (passedId) => {
-  try {
-    const result = movies.filter((item) => item.id !== passedId);
-    await updateDoc(movieRef, {
-      SavedShows: result,
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
-
 const SavedShows = () => {
   const [movies, setMovies] = useState([]);
   const { user } = UserAuth();
@@ -38,6 +16,30 @@ const SavedShows = () => {
       setMovies(doc.data()?.savedShows);
     });
   }, [user?.email]);
+
+  const slideLeft = () => {
+    let slider = document.getElementById('slider');
+    slider.scrollLeft -= 500;
+  };
+  const slideRight = () => {
+    let slider = document.getElementById('slider');
+    slider.scrollLeft += 500;
+  };
+
+  const movieRef = doc(db, documentName, `${user?.email}`);
+
+  const deleteShow = async (passedId) => {
+    try {
+      console.log(passedId);
+      const result = movies.filter((item) => item.id !== passedId);
+      const response = await updateDoc(movieRef, {
+        savedShows: result,
+      });
+      console.log(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   return (
     <div>
@@ -49,7 +51,7 @@ const SavedShows = () => {
           className='bg-white left-2 rounded-full absolute opacity-50 hover:opacity-100 cursor-pointer z-10 hidden group-hover:block'
         />
         <div className='w-full h-full overflow-y-hidden overflow-x-scroll whitespace-nowrap scrollbar-hide scroll-smooth relative'>
-          {movies.map((item, id) => (
+          {movies?.map((item, id) => (
             <div
               key={id}
               className='w-[160px] sm:w-[200px] md:w-[240px] lg:w-[280px] inline-block cursor-pointer relative p-2'
