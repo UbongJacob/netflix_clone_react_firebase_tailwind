@@ -1,7 +1,7 @@
 <div align="center">
   <h2 align="center">Dev Uby Netflix Clone</h2>
 
-Dev Uby Netflix Clone is a project for learning the concepts of [React](https://reactjs.org/), [Tailwind](https://tailwindcss.com/) and [Firebase](https://firebase.google.com/) by rebuilding some pages of [Netflix](https://www.netflix.com/) using [The Movie Database API](https://www.themoviedb.org/), <br />Responsive for all devices
+Dev Uby Netflix Clone is a project for learning the concepts of [React](https://reactjs.org/), [Tailwind](https://tailwindcss.com/) and [Firebase](https://firebase.google.com/) by rebuilding some pages of [Netflix](https://www.netflix.com/) using [The Movie Database API](https://www.themoviedb.org/).
 
 ## <a href="https://neflix-clone-react-tailwind.web.app"><strong>➥ Run a Live Demo Of This Project </strong></a>
 
