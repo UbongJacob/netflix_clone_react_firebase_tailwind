@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+<div align="center">
+  <h2 align="center">Dev Uby Netflix Clone</h2>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Dev Uby Netflix Clone is a project for learing the concepts of React, Tailwind and Firebase by rebuilding some pages of netflix using [The Movie Database API](https://www.themoviedb.org/), <br />Responsive for all devices, built using HTML, CSS, JavaScript and Bootstrap.
 
-## Available Scripts
+## <a href="https://neflix-clone-react-tailwind.web.app"><strong>➥ Run a Live Demo Of This Project </strong></a>
+
+</div>
+
+<br />
+
+### Demo Screenshots
+
+<div background-color="red" >
+<img src="./src/demo-images/desktop.jpg" alt="Desktop Demo">
+<br/>
+<br/>
+<img src="./src/demo-images/mobile.jpg" alt="Mobile Demo">
+</div>
+
+### Credit and Acknowledgment
+
+This repo is a modified build of the Video linked below and was created to learn about HTML,CSS,jQuery and Bootstrap. Most Credits goes to the YouTube Channel linked below
+
+- [YouTube Video Link](https://youtu.be/ATz8wg6sg30)
+- [YouTube Channel Link](https://www.youtube.com/channel/UCmT9TwcIb_yAe7-Uqhn3fBA)
+
+<br/>
+
+### Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- [Git](https://git-scm.com/downloads 'Download Git') must be installed on your operating system.
+
+### Run Locally
+
+To run **Dev Uby Netflix Clone** locally, run this command on your git bash:
+
+Linux and macOS:
+
+```bash
+sudo git clone https://github.com/UbongJacob/netflix_clone_react_firebase_tailwind.git
+```
+
+Windows:
+
+```bash
+git clone https://github.com/UbongJacob/netflix_clone_react_firebase_tailwind.git
+```
 
 In the project directory, you can run:
+
+### `yarn`
+To install all the required dependencies
 
 ### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### <a href="https://neflix-clone-react-tailwind.web.appp"><strong>➥ Live Demo</strong></a>
 
-### `yarn test`
+### Contact or Connect with me:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/ubonggjacob) or [Linkedin](https://www.linkedin.com/in/ubonggjacob)
+<br />
+<a href = "https://www.linkedin.com/in/ubonggjacob"><img src="https://img.icons8.com/fluent/48/000000/linkedin.png"/></a>
+<a href = "https://twitter.com/UbonggJacob"><img src="https://img.icons8.com/fluent/48/000000/twitter.png"/></a>
 
-### `yarn build`
+### License
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This project is **free to use** and does not contains any license. Once again most intellectual property right is refrenced on the credit section above
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
