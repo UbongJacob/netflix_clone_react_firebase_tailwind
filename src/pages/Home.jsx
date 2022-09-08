@@ -5,7 +5,7 @@ import requests from '../Request';
 const Home = () => {
   const rowDetails = [
     {
-      title: 'Upcoming',
+      title: 'Upcoming Movies',
       url: 'upcoming',
     },
     {
